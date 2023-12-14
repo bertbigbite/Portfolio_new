@@ -1,34 +1,38 @@
 import "./Home.css"
 import { useEffect, useState } from "react"
-import BookListing from "../Booklisting/Booklisting"
+import Projects from '/projects.json'
+import HomeBanner from "../HomeBanner/HomeBanner"
+import ProductListing from "../Productlisting/Productlisting"
 
 function Home() {
-    const [books, setBooks] = useState ([])
+    const [projects, setProjects] = useState ([])
     const [clickedBookId, setclickedBookId] = useState(null)
 
 
+    
     useEffect (function() {
-        fetch('https://book-swap-api.dev.io-academy.uk/api/books')
+        fetch('projects.json')
             .then(function (res) {
                 return res.json()
             })
-            .then(function (bookData) {
-                setBooks(bookData.data)
+            .then(function (project) {
+                setProjects(project)
             })
     }, [])
    
     return (
         <>
-        
-        <div className='books-container'>
-            {books.map(book => 
-            <BookListing 
-            title={book.title} 
-            author={book.author} 
-            image={book.image} 
-            genre={book.genre.name} 
-            id={book.id} 
-            key={book.id}
+        <HomeBanner/>
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Recent projects</h2>
+        <div className='rounded-3xl flex flex-row bg-slate-100 books-container'>
+            {Projects.map(project => 
+            <ProductListing key={project.id}
+            name={project.name} 
+            desc={project.desc} 
+            image={project.image} 
+            url={project.url} 
+            view={project.view} 
+            git={project.git}
             setClickedBookId={setclickedBookId}/>    
             )}
         </div>

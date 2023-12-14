@@ -1,8 +1,120 @@
+body {
+    margin:0px;
+    background: linear-gradient(-45deg, #40d1f6, #f8e673, #caeefb, #b2feec);
+	  background-size: 400% 400%;
+	  animation: gradient 15s ease infinite;
+	  height: 100vh;
+}
 .books-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-around;
-    margin-top: 300px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 100px;
+    width:70%;
 
 }
+
+
+/* First section */
+.section.bg-gray {
+  font-family:  'Poppins', sans-serif;
+  font-weight: bold;
+    display:block;
+    width: 100%;
+    margin: auto;
+    margin-top: 230px;
+    height: 400px;
+    text-align: center;
+    filter: drop-shadow(0px 0px 20px #898989a8);
+  }
+
+  .profile_container {
+    position:static;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: top;
+    align-content:center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .profile_container h1 {
+    font-size: 100px;
+
+  }
+ 
+  .section.bg-gray img {
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    align-content:center;
+    height:400px;
+    width: 800px;
+    transform: translate(0px, 50px);
+    border:none;
+    z-index: auto;
+  }
+
+  .profileimage {
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    align-content:center;
+    width:400px;
+    margin:auto;
+  } 
+
+  .title {
+    font-size:50px;
+  }
+
+  .Modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.imagerow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap:10px;
+}
+
+.image {
+  width:300px;
+  border-radius: 15px;
+  filter: drop-shadow(0px 0px 20px #898989a8);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
